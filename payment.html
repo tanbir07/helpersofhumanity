@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .payment-container {
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .payment-option:hover {
+            background-color: #f1f3f5;
+            border-color: #adb5bd;
+        }
+        .payment-option img {
+            width: 80px;
+            height: auto;
+        }
+        .payment-option .payment-name {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-container text-center">
+        <h2>Select Payment Option | পেমেন্ট অপশন</h2>
+
+        <div class="payment-option" onclick="window.location.href='#';">
+            <img src="https://freelogopng.com/images/all_img/1656227518bkash-logo-png.png" alt="Bkash">
+            <span class="payment-name">BKASH PAYMENT</span>
+        </div>
+
+        <div class="payment-option" onclick="window.location.href='https://docs.google.com/forms/d/1tiKa9JLUZYEKDpapqiSaQRYQ6hjfzpK2r00jBlW7sw0/viewform';">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEf6x_Py8ICPiKIPGRQgTaYr3-bTSc6dhaIA&s" alt="Nagad">
+            <span class="payment-name">NAGAD</span>
+        </div>
+
+        <div class="payment-option" onclick="window.location.href='#';">
+            <img src="https://st.softgamings.com/uploads/BankTransfer_logo_1200x600.png" alt="Bank Transfer">
+            <span class="payment-name">BANK TRANSFER</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
