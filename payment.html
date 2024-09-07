@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .payment-container {
+            max-width: 700px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            color: navy;
+        }
+        .payment-title-box {
+            background-color: #001f3f; /* Navy blue background */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .payment-title {
+            font-weight: bold;
+            color: white;
+            font-size: 2em;
+            display: inline-block;
+        }
+        .letter-animate {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 4px solid;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            animation: rainbow-border 3s linear infinite;
+            background-color: white;
+            color: navy;
+        }
+        .payment-option:hover {
+            background-color: #f1f3f5;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .payment-option img {
+            width: 70px;
+            height: auto;
+        }
+        .payment-name {
+            flex-grow: 1;
+            text-align: left;
+            margin-left: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #495057;
+        }
+        .payment-option .arrow {
+            font-size: 1.5em;
+            color: #6c757d;
+        }
+        .footer-text {
+            text-align: center;
+            font-size: 1em;
+            color: red;
+            margin-top: 30px;
+            font-weight: bold;
+            animation: blink-animation 1s infinite;
+        }
+        @keyframes blink-animation {
+            50% {
+                opacity: 0;
+            }
+        }
+        @keyframes rainbow-border {
+            0% {
+                border-color: red;
+            }
+            16% {
+                border-color: orange;
+            }
+            33% {
+                border-color: yellow;
+            }
+            50% {
+                border-color: green;
+            }
+            66% {
+                border-color: blue;
+            }
+            83% {
+                border-color: indigo;
+            }
+            100% {
+                border-color: violet;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-container">
+        <div class="payment-title-box">
+            <h2 class="payment-title" id="animated-text"></h2>
+        </div>
+
+        <div class="payment-option" onclick="window.location.href='https://docs.google.com/forms/d/1tiKa9JLUZYEKDpapqiSaQRYQ6hjfzpK2r00jBlW7sw0/viewform';">
+            <img src="https://freelogopng.com/images/all_img/1656227518bkash-logo-png.png" alt="Bkash">
+            <span class="payment-name">BKASH PAYMENT</span>
+            <span class="arrow">→</span>
+        </div>
+
+        <div class="payment-option" onclick="window.location.href='https://docs.google.com/forms/d/13yVGZ4T0n0_5dsovCpZJ5jbwfjt3_ie312HRcD8bNts/viewform';">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEf6x_Py8ICPiKIPGRQgTaYr3-bTSc6dhaIA&s" alt="Nagad">
+            <span class="payment-name">NAGAD PAYMENT</span>
+            <span class="arrow">→</span>
+        </div>
+
+        <div class="payment-option" onclick="window.location.href='https://docs.google.com/forms/d/1lpCVt6JVWCYl4NQjg8imJ6-c8gk-eCRpby1RQqrfawU/viewform';">
+            <img src="https://st.softgamings.com/uploads/BankTransfer_logo_1200x600.png" alt="Bank Transfer">
+            <span class="payment-name">BANK TRANSFER</span>
+            <span class="arrow">→</span>
+        </div>
+
+        <p class="footer-text">All transactions are securely processed. | সমস্ত লেনদেন নিরাপদে প্রক্রিয়া করা হয়।</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Text for animation
+        const text = "Select Payment Method";
+        const animatedText = document.getElementById("animated-text");
+        
+        // Function to animate the text
+        function animateText() {
+            let delay = 0;
+            animatedText.innerHTML = ''; // Clear the text initially
+            
+            const words = text.split(" ");
+            
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+                
+                // Create a container span for each word
+                const wordContainer = document.createElement('span');
+                wordContainer.style.display = 'inline-block';
+                wordContainer.style.marginRight = '10px'; // Add space between words
+                
+                // Loop through each letter of the word
+                for (let j = 0; j < word.length; j++) {
+                    const span = document.createElement('span');
+                    span.classList.add('letter-animate');
+                    span.style.animationDelay = `${delay}s`;
+                    span.textContent = word[j];
+                    wordContainer.appendChild(span);
+                    delay += 0.15; // Adjust the speed (0.15 seconds per letter)
+                }
+                
+                animatedText.appendChild(wordContainer);
+            }
+
+            // Set a timeout to loop the animation
+            setTimeout(animateText, delay * 1000 + 2000); // Add 2 seconds pause before reanimating
+        }
+
+        // Start the animation on page load
+        animateText();
+    </script>
+</body>
+</html>

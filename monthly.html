@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light background for visibility */
+        }
+        .button-container {
+            display: flex;
+            justify-content: center; /* Centering buttons horizontally */
+            padding: 40px;
+            background-color: #fff; /* Background for button area */
+            border-bottom: 2px solid #ddd; /* Optional border for visual separation */
+        }
+        .monthly-button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            margin: 0 15px; /* Spacing between buttons */
+            padding: 12px 20px;
+            border-radius: 8px; /* Rounded corners for button */
+            background: linear-gradient(145deg, #007bff, #0056b3); /* Gradient background */
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.3); /* Shadow effect */
+            transition: background 0.3s, box-shadow 0.3s; /* Smooth transitions */
+        }
+        .monthly-button:hover {
+            background: linear-gradient(145deg, #0056b3, #003d80); /* Darker gradient on hover */
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.4); /* Enhanced shadow on hover */
+        }
+        .monthly-button img {
+            width: 24px;
+            height: auto;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href="https://docs.google.com/forms/d/1T-iUFqKzigNJjPey5BxCuEMtNvd16UsRGgSATq1hofM/viewform" class="monthly-button" id="monthly-in">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaUHCpE0L_qSR6tn6rb5ifE3IP6PtpvpNe7IjT_xvUr2gSVSSf1wr_ReZa&s=10" alt="Monthly In Logo">
+            Monthly In
+        </a>
+        <a href="https://docs.google.com/forms/d/1svT48Mpr6h_oQsAAM5ce4VLFmc_GScjxDn8kSmY1Re4/viewform" class="monthly-button" id="monthly-out">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXN0TBpUDDqFCVLMMjpAOdb_2HM--BIags34yiTpgJrcVCinTIKyyagsKM&s=10" alt="Monthly Out Logo">
+            Monthly Out
+        </a>
+    </div>
+</body>
+</html>

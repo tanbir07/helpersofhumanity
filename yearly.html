@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light background for visibility */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+        .notice-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .notice-box h2 {
+            color: #d9534f; /* Red color for the notice title */
+            margin-bottom: 20px;
+        }
+        .notice-box p {
+            font-size: 16px;
+            color: #333;
+        }
+        .stammer {
+            display: inline;
+            position: relative;
+            color: #333;
+        }
+        .stammer::before {
+            content: attr(data-stammer);
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            border-right: 2px solid #333;
+            animation: stammer 1s steps(5, end) infinite;
+        }
+        @keyframes stammer {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="notice-box">
+        <h2>NOTICE</h2>
+        <p>
+            Yearly details will be shown here after a year. We have established our organization recently, so the details are not available yet.
+            <br><br><br>
+            আমাদের সংগঠন রিসেন্টলি প্রতিষ্ঠা হওয়ায় এখনো বছরের ডেইটা দৃশ্যমান নয়! এটি এক বছর পর দৃশ্যমান হবে।
+        </p>
+        <p class="stammer" data-stammer="We appreciate your patience and understanding.">We appreciate your patience and understanding.</p>
+    </div>
+</body>
+</html>
